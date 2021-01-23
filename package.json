@@ -1,0 +1,28 @@
+{
+  "name": "mrpropre",
+  "version": "0.0.1",
+  "description": "Isn't it better to have a nice and clean Discord server ?",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkirchhoffer/mrpropre.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "gif-censor"
+  ],
+  "author": "Nicolas KIRCHHOFFER <git@nkirchho.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nkirchhoffer/mrpropre/issues"
+  },
+  "homepage": "https://github.com/nkirchhoffer/mrpropre#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
