@@ -23,16 +23,10 @@ const message = {
                 url,
                 timeout: '2000'
             });
-
-            console.log(res.headers);
             
         } catch(error) {
             console.error(error);
             throw new Error('Une erreur est survenue lorsque nous avons requêté ton lien, code : ' + error.code);
-        }
-
-        if (res.headers['content-type'] !== 'image/gif') {
-            throw new Error('Le lien que tu as posté ne représente pas d\'image GIF valide (`image/gif`) :angry:');
         }
 
         return url;
