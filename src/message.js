@@ -16,20 +16,23 @@ const message = {
             throw new Error('Le lien que tu as posté ne représente pas d\'image GIF ! :angry:');
         }
         
+        let res;
         try {
-            console.log(url);
-            const res = await axios({
+            res = await axios({
                 method: 'GET',
                 url,
                 timeout: '2000'
             });
-    
-            if (res.headers['content-type'] !== 'image/gif') {
-                throw new Error('Le lien que tu as posté ne représente pas d\'image GIF valide (`image/gif`) :angry:');
-            }
+
+            console.log(res.headers);
+            
         } catch(error) {
             console.error(error);
             throw new Error('Une erreur est survenue lorsque nous avons requêté ton lien, code : ' + error.code);
+        }
+
+        if (res.headers['content-type'] !== 'image/gif') {
+            throw new Error('Le lien que tu as posté ne représente pas d\'image GIF valide (`image/gif`) :angry:');
         }
 
         return true;
