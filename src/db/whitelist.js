@@ -18,6 +18,8 @@ const whitelist = {
         }
 
         gifs.insert({ url });
+
+        return true;
     }
 
 }
