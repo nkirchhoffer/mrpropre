@@ -23,11 +23,15 @@ bot.on('message', msg => {
             if (msg.channel.id === process.env.WHITELIST_CHANNEL_ID) {
                 whitelist.add(url).then(() => {
                     msg.react('✅');
-                }).catch(msg.author.send);
+                }).catch(error => {
+                    msg.author.send(error.message);
+                });
             } else if (msg.channel.id === process.env.BLACKLIST_CHANNEL_ID) {
                 blacklist.add(url).then(() => {
                     msg.react('✅');
-                }).catch(msg.author.send);
+                }).catch(error => {
+                    msg.author.send(error.message);
+                });
             } else if (msg.channel.id === process.env.TEST_CHANNEL_ID) {
                 msg.react('💩');
             }
