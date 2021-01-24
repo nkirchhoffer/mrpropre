@@ -6,7 +6,8 @@ const message = require('./src/message');
 
 const cleanChannels = [
     process.env.WHITELIST_CHANNEL_ID,
-    process.env.BLACKLIST_CHANNEL_ID
+    process.env.BLACKLIST_CHANNEL_ID,
+    process.env.TEST_CHANNEL_ID
 ];
 
 bot.on('ready', () => {

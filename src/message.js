@@ -12,11 +12,12 @@ const message = {
         const url = this.regex.exec(content)[0];
         const extension = url.split('.');
 
-        if (extension[extension.length - 1] !== 'gif') {
+        if (extension[extension.length - 1].split('?')[0] !== 'gif') {
             throw new Error('Le lien que tu as posté ne représente pas d\'image GIF ! :angry:');
         }
         
         try {
+            console.log(url);
             const res = await axios({
                 method: 'GET',
                 url,
