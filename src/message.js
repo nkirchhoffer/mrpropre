@@ -28,6 +28,7 @@ const message = {
                 throw new Error('Le lien que tu as posté ne représente pas d\'image GIF valide (`image/gif`) :angry:');
             }
         } catch(error) {
+            console.error(error);
             throw new Error('Une erreur est survenue lorsque nous avons requêté ton lien, code : ' + error.code);
         }
 
