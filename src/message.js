@@ -1,7 +1,5 @@
 const axios = require('axios').default;
 
-const whitelist = require('./db/whitelist');
-
 const message = {
 
     regex: /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/,
@@ -37,9 +35,7 @@ const message = {
             throw new Error('Le lien que tu as posté ne représente pas d\'image GIF valide (`image/gif`) :angry:');
         }
 
-        whitelist.add(url);
-
-        return true;
+        return url;
     }   
 
 };
