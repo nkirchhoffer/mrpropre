@@ -8,7 +8,7 @@ const blacklist = {
         if (gifs.count({ url }) > 0) {
             throw new Error("Ce GIF a déjà été soumis à notre algorithme, mais merci quand même bg! :smiley:");
         }
-
+        
         const whitelist = db.get('whitelist').count({ url });
 
         if (whitelist > 0) {

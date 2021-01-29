@@ -41,6 +41,11 @@ bot.on('message', msg => {
         });
 
     }
+
+    if (msg.content.match(/!s/)) {
+        msg.channel.send(':warning: IL RIGOLE :warning: (l\'auteur indique que le sarcasme a été utilisé)');
+    }
+
 });
 
 bot.login(process.env.TOKEN);
