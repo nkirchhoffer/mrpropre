@@ -43,7 +43,11 @@ bot.on('message', msg => {
     }
 
     if (msg.content.match(/!s/)) {
-        msg.channel.send(':warning: IL RIGOLE :warning: (l\'auteur indique que le sarcasme a été utilisé)');
+        if (msg.author.id === '489032872355823626' || msg.author.id === '626056738038087691') {
+            msg.channel.send(':warning: ELLE RIGOLE :warning: (l\'autrice indique que le sarcasme a été utilisé)');
+        } else {
+            msg.channel.send(':warning: IL RIGOLE :warning: (l\'auteur indique que le sarcasme a été utilisé)');
+        }
     }
 
 });
